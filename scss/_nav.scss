@@ -1,0 +1,225 @@
+//DESKTOP MENU
+.desk-menu {
+    position: fixed;
+    width: 3rem;
+    margin-left: 50%;
+    transform: translate(-50%, -3rem);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: $bold;
+    z-index: 200;
+    background-color: rgba($primary, .5);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: all 300ms ease-in-out;
+    height: 5rem;
+    &:hover, &.open {
+        transform: translate(-50%, 0);
+        height: 3.5rem;
+        max-width: 37rem;
+        width: 70%;
+        
+        border-bottom-left-radius: $soft-radius;
+        border-bottom-right-radius: $soft-radius;
+        .desk-menu-open {
+            font-size: 0;
+        }
+    }
+    &-links {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &-open {
+        display: block;
+        position: absolute;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        bottom: 0px;
+        transition: font-size 300ms ease-in-out;
+    }
+    a {
+        position: relative;
+        z-index: 200;
+        display: block;
+        padding: .7em;
+        transition: color 250ms ease-in-out;
+        &:hover {
+            cursor: pointer;
+            color: $accent;
+        }
+    }
+
+}
+
+
+//MOBILE TOGGLE
+.scale {
+    //border: 2px solid red;
+    transform: scale(.33);
+    position: fixed;
+    z-index: 200;
+    //display: block;
+    top: 0;
+    right: 0;
+   
+    //width: 100%;
+    
+   
+
+    //border: 2px red solid;
+    /* height: 200px;
+    width: 200px; */
+}
+
+.mob-tog {
+    margin: 3rem 3rem 0 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: $primary-light 6px solid;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.49);
+    cursor: pointer;
+    transition: border .3s ease-in-out;
+    &:hover {
+        border: $accent 6px solid;
+
+        span {
+            background-color: $accent;
+        }
+    }
+
+    &.open {
+        .menu__top {
+            top: 26px;
+            transform: rotate(45deg);
+        }
+        .menu__middle {
+            left: -10px;
+            opacity: 0;
+        }
+        .menu__bottom {
+            top: 26px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+
+
+.menu {
+    position: relative;
+    top: 30%; // positions lines in circle
+
+    &__top,
+    &__middle,
+    &__bottom {
+        border-radius: 2px;
+        width: 60px;
+        height: 7px;
+        background: $primary-light;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__top {
+        top: 11px;
+    }
+
+    &__middle {
+        top: 27px;
+        opacity: 1;
+    }
+
+    &__bottom {
+        top: 44px;
+    }
+
+
+}
+
+
+
+
+/* 
+
+
+.mob-tog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 1.3em 1.3em 0 auto;
+    z-index: 200;
+    width: 3rem;
+    height: 3rem;
+    padding: .5em;
+    border: 3px $primary-light solid;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: border 250ms ease-out;
+    
+     > span {
+        position: absolute;
+        display: block;
+        width: 23px;
+        height: 3px;
+        background-color:  $primary-light;
+        transition: 2s ease-in-out;
+        transform-origin: 0px 0px;
+        &:first-child {
+            //background-color: red;
+            top: 30%;
+            //transform-origin: 0% 0%;
+        }
+        &:nth-child(2) {
+            top: 49%;
+        }
+        &:last-child {
+           
+            top: 68%;
+           // transform: 0% 100%;
+        }
+    } 
+
+    &:hover {
+        border: $accent 3px solid;
+        span {
+            background-color: $accent;
+        }
+    }
+
+    &.open {
+
+          
+        > span:first-child {
+            transform: rotate(45deg);
+            top: 30%;
+            left: 32%;
+        }
+
+        > span:nth-child(2) {
+            opacity: 0;
+        }
+
+        > span:last-child {
+
+            transform: rotate(-45deg);
+            top: 68%;
+            left: 28%;
+        }
+        
+    }
+}
+
+ */
