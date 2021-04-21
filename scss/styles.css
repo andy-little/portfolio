@@ -12,6 +12,10 @@ html {
 a, a:hover, a:visited {
   text-decoration: none;
   color: inherit;
+  min-width: 9rem;
+  width: 100%;
+  height: 100%;
+  padding: .8em .8em;
 }
 
 body {
@@ -107,12 +111,21 @@ image {
   }
 }
 
+.desk-menu-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .desk-menu {
   position: fixed;
-  width: 3rem;
-  margin-left: 50%;
-  -webkit-transform: translate(-50%, -3rem);
-          transform: translate(-50%, -3rem);
+  width: 80%;
+  max-width: 3rem;
+  -webkit-transform: translateY(-1.5rem);
+          transform: translateY(-1.5rem);
   color: white;
   font-size: 1.2rem;
   font-weight: 700;
@@ -120,17 +133,17 @@ image {
   background-color: rgba(1, 0, 56, 0.5);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  height: 5rem;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  height: auto;
 }
 
 .desk-menu:hover, .desk-menu.open {
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   height: 3.5rem;
-  max-width: 37rem;
-  width: 70%;
+  max-width: 40rem;
+  opacity: 1;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
@@ -139,12 +152,24 @@ image {
   font-size: 0;
 }
 
+.desk-menu:hover .desk-menu-links, .desk-menu.open .desk-menu-links {
+  opacity: 1;
+  -webkit-transition: opacity 150ms ease-in;
+  transition: opacity 150ms ease-in;
+}
+
+.desk-menu.close {
+  -webkit-transform: translateY(-5rem);
+          transform: translateY(-5rem);
+}
+
 .desk-menu-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  opacity: 0;
 }
 
 .desk-menu-open {
@@ -154,8 +179,6 @@ image {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 0px;
-  -webkit-transition: font-size 300ms ease-in-out;
-  transition: font-size 300ms ease-in-out;
 }
 
 .desk-menu a {

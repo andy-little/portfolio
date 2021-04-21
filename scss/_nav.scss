@@ -1,9 +1,15 @@
 //DESKTOP MENU
+.desk-menu-cont {
+    //width: 100%;
+    //height: 10rem;
+    display: flex;
+    justify-content: center;
+}
 .desk-menu {
     position: fixed;
-    width: 3rem;
-    margin-left: 50%;
-    transform: translate(-50%, -3rem);
+    width: 80%;
+    max-width: 3rem;
+    transform: translateY(-1.5rem);
     color: white;
     font-size: 1.2rem;
     font-weight: $bold;
@@ -11,23 +17,35 @@
     background-color: rgba($primary, .5);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    transition: all 300ms ease-in-out;
-    height: 5rem;
+    transition: all 200ms ease-in-out;
+    height: auto;
+    
+
     &:hover, &.open {
-        transform: translate(-50%, 0);
+        transform: translateY(0);
         height: 3.5rem;
-        max-width: 37rem;
-        width: 70%;
+        max-width: 40rem;
+        
+        opacity: 1;
         
         border-bottom-left-radius: $soft-radius;
         border-bottom-right-radius: $soft-radius;
         .desk-menu-open {
             font-size: 0;
         }
+        .desk-menu-links {
+            opacity: 1;
+            transition: opacity 150ms ease-in;
+        }
+    }
+    &.close {
+        transform: translateY(-5rem);
     }
     &-links {
         display: flex;
         justify-content: space-around;
+        opacity: 0;
+        
     }
 
     &-open {
@@ -36,7 +54,7 @@
         margin-left: 50%;
         transform: translateX(-50%);
         bottom: 0px;
-        transition: font-size 300ms ease-in-out;
+        
     }
     a {
         position: relative;
