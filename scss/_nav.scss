@@ -1,7 +1,5 @@
 //DESKTOP MENU
 .desk-menu-cont {
-    //width: 100%;
-    //height: 10rem;
     display: flex;
     justify-content: center;
 }
@@ -71,27 +69,18 @@
 }
 
 
-//MOBILE TOGGLE
+//MOBILE
+//SHRINK AND POSITION HAMBURGER 
 .scale {
-    //border: 2px solid red;
     transform: scale(.33);
     position: fixed;
     z-index: 200;
-    //display: block;
     top: 0;
     right: 0;
-   
-    //width: 100%;
-    
-   
-
-    //border: 2px red solid;
-    /* height: 200px;
-    width: 200px; */
 }
-
+//HAMBURGER BUTTON
 .mob-tog {
-    margin: 3rem 3rem 0 0;
+    margin: 5.5rem 22vw 0 0;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -127,8 +116,7 @@
     }
 }
 
-
-
+// HAMBURGER LINES
 .menu {
     position: relative;
     top: 30%; // positions lines in circle
@@ -138,7 +126,7 @@
     &__bottom {
         border-radius: 2px;
         width: 60px;
-        height: 7px;
+        height: 6px;
         background: $primary-light;
         position: absolute;
         margin: 0 auto;
@@ -159,85 +147,53 @@
     &__bottom {
         top: 44px;
     }
-
-
 }
 
-
-
-
-/* 
-
-
-.mob-tog {
+//OVERLAY FOR MOB MENU
+.overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image: linear-gradient($primary, transparent);
+    z-index: -100; //JUST ME
+    transition: opacity 200ms ease-in-out;
+    &.open {
+        z-index: 200;
+        opacity: 1;
+    }
+    
+}
+// MOBILE MENU
+.mob-links {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: fixed;
-    left: 0;
-    right: 0;
-    margin: 1.3em 1.3em 0 auto;
+    margin-left: 50%;
+    transform: translateX(-50%) scale(0);
     z-index: 200;
-    width: 3rem;
-    height: 3rem;
-    padding: .5em;
-    border: 3px $primary-light solid;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: border 250ms ease-out;
-    
-     > span {
-        position: absolute;
-        display: block;
-        width: 23px;
-        height: 3px;
-        background-color:  $primary-light;
-        transition: 2s ease-in-out;
-        transform-origin: 0px 0px;
-        &:first-child {
-            //background-color: red;
-            top: 30%;
-            //transform-origin: 0% 0%;
-        }
-        &:nth-child(2) {
-            top: 49%;
-        }
-        &:last-child {
-           
-            top: 68%;
-           // transform: 0% 100%;
-        }
-    } 
-
-    &:hover {
-        border: $accent 3px solid;
-        span {
-            background-color: $accent;
+    color: $primary;
+    background: white;
+    padding: 1.5em;
+    border-radius: 13px;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    top: 1rem;
+    transform-origin: top;
+    transition: transform 200ms ease-in-out;
+    a {
+        font-size: 1.2rem !important;
+        font-weight: $bold;
+        &:not(:last-child) {
+            margin-bottom: .7rem;
         }
     }
-
-    &.open {
-
-          
-        > span:first-child {
-            transform: rotate(45deg);
-            top: 30%;
-            left: 32%;
-        }
-
-        > span:nth-child(2) {
-            opacity: 0;
-        }
-
-        > span:last-child {
-
-            transform: rotate(-45deg);
-            top: 68%;
-            left: 28%;
+        &.open {
+            transform: translateX(-50%) scale(1);
+            transition: transform 200ms ease-in-out;
         }
         
-    }
 }
-
- */

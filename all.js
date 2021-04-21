@@ -2,10 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Toggle between hamburger and close symbol
     const hamBurger = document.querySelector('.mob-tog');
+    const mobLinks = document.querySelector('.mob-links');
+    const overlay = document.querySelector('.overlay');
+    const closeMobLinks = document.querySelectorAll('.mob-links-close')
+
     hamBurger.onclick = () => {
         hamBurger.classList.toggle('open');
+        mobLinks.classList.toggle('open');
+        overlay.classList.toggle('open');
     }
- 
+
+    closeMobLinks.forEach((btn) => {
+        btn.onclick = () => {
+            mobLinks.classList.remove('open')
+            hamBurger.classList.remove('open')
+            overlay.classList.remove('open')
+        }
+    });
     
 
 });

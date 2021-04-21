@@ -9,10 +9,6 @@ a, a:hover, a:visited {
     
     text-decoration: none;
     color: inherit;
-    min-width: 9rem;
-    width: 100%;
-    height: 100%;
-    padding: .8em .8em;
     
 }
 
@@ -37,11 +33,12 @@ image {
     display: block;
 }
 .btn {
+    text-align: center;
     display: inline-block;
     width: 9em;
-    text-decoration: none;
+    max-height: 2.4rem;
     padding: .8em 0;
-    color: white;
+    color: white !important;
     background: $accent;
     font-weight: 700;
     font-size: .8rem;
@@ -53,7 +50,7 @@ image {
 
     &:hover, &:focus {
         box-shadow: 1px 1px 3px rgba(73, 68, 68, .7);
-        transform: scale(.98);
+        transform: scale(.97);
         cursor: pointer;
     }
 }
