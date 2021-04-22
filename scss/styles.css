@@ -211,8 +211,8 @@ image {
   right: 0;
   background: transparent;
   border: #676688 6px solid;
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.49);
-          box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   -webkit-transition: border .3s ease-in-out;
   transition: border .3s ease-in-out;
@@ -667,11 +667,11 @@ header {
   -ms-grid-row-span: 2;
   grid-row: 2 / span 2;
   background-color: #DEF5F7;
-  padding: 3em;
+  padding: 1.5em 2.5em 1.5em;
   border-radius: 40px 3rem 3rem 40px;
 }
 
-.hero-hi button {
+.hero-btn {
   display: block;
   margin-left: 0;
 }

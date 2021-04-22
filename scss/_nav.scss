@@ -78,7 +78,7 @@
     top: 0;
     right: 0;
 }
-//HAMBURGER BUTTON
+//HAMBURGER BUTTON circle
 .mob-tog {
     margin: 5.5rem 22vw 0 0;
     width: 150px;
@@ -89,7 +89,7 @@
     right: 0;
     background: transparent;
     border: $primary-light 6px solid;
-    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.49);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: border .3s ease-in-out;
     &:hover {
